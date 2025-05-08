@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll-Limited Reading with Quiz</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        #container {
+            width: 600px;
+            margin: auto;
+            border: 2px solid #333;
+            height: 60px;
+            overflow-y: scroll;
+            padding: 20px;
+            line-height: 1.6;
+            background: #fdfdfd;
+            position: relative;
+        }
+
+        #container::before,
+        #container::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(to bottom, white, transparent);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        #container::after {
+            bottom: 0;
+            background: linear-gradient(to top, white, transparent);
+        }
+
+        #doneBtn,
+        #submitBtn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        #doneBtn:disabled {
+            opacity: 0.6;
+        }
+
+        #quiz {
+            display: none;
+            text-align: left;
+            margin: 20px auto;
+            width: 600px;
+        }
+
+        .question-box {
+            background: #f9f9f9;
+            /* Soft background color */
+            padding: 10px;
+            /* Padding for spacing */
+            margin-bottom: 10px;
+            /* Space below the question */
+        }
+
+        label {
+            display: block;
+            /* Each option on a new line */
+            /* margin: 5px 0; */
+            /* Space between options */
+        }
+
+        .option {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body oncontextmenu="return false">
+
+    <h2>Reading Assignment</h2>
+
+    <div id="instructions" style="text-align: center; margin-bottom: 10px; font-size: 16px; color: #333;">
+        Please read the following passage. Then click the "Done Reading" button to proceed to the reading comprehension
+        questions.
+    </div>
+
+    <div id="container">
+        What is a large language model (LLM)?
+        Large language models (LLMs) use machine learning to understand
+        and generate text. They work by analyzing massive datasets of
+        language.
+        What is a large language model (LLM)?
+        A large language model (LLM) is a type of artificial intelligence (AI) that can understand and
+        generate text. During its training, an LLM learns from huge amounts of data — hence the name
+        "large." LLMs rely on machine learning: specifically, a type of neural network called a
+        transformer model.
+        In simpler terms, an LLM is an AI that has been fed enough examples to be able to recognize
+        and interpret human language or other types of complex data. Many LLMs are trained on data
+        that has been gathered from the Internet — thousands or millions of gigabytes' worth of text. But
+        the quality of the samples impacts how well the LLM will learn how to speak, so an LLM's
+        programmers may use a more curated data set.
+        LLMs use a type of machine learning called deep learning in order to understand how
+        characters, words, and sentences work together. Deep learning involves the probabilistic
+        analysis of unstructured data, which eventually teaches the model to recognize distinctions
+        between pieces of content without any human guidance.
+        LLMs are then further trained via tuning: they are fine-tuned or prompt-tuned to the particular
+        task that the developer wants them to do, such as interpreting questions and generating
+        responses, or translating text from one language to another.
+        What are LLMs used for?
+        LLMs can learn to perform a number of tasks. One of their most well-known forms is generative
+        AI: When asked a question, they give a response in text. The publicly available LLM ChatGPT,
+        for instance, can compose essays, poems, and other forms of writing to respond to the user.
+        Any large, complex data set can be training material for LLMs, including programming
+        languages. LLMs can help programmers write code. They write functions upon request — or,
+        given some code as a starting point, they can finish writing a program. LLMs can also analyze
+        sentiment, assist in DNA research, provide customer service, chat with users, and enhance
+        online search.
+        LLMs are prevalent in the real world with ChatGPT (from OpenAI), Bard (Google), Llama
+        (Meta), and Bing Chat (Microsoft). GitHub's Copilot is another LLM, specializing in coding rather
+        than natural language processing.
+        How do large language models work?
+
+        Machine learning and deep learning
+        At a basic level, LLMs are built with machine learning. Machine learning is a subset of AI, and it
+        involves feeding an AI large amounts of data in order to train it to identify features of that data.
+        LLMs rely on a type of machine learning called deep learning. Deep learning models can
+        essentially train themselves to recognize distinctions without human intervention, although some
+        human help is typically necessary.
+        Deep learning uses probability in order to learn. For instance, in the sentence "The quick brown
+        fox jumped over the lazy dog," the letters "e" and "o" are the most common, appearing four
+        times each. From this, a deep learning model could conclude (correctly) that these characters
+        are among the most likely to appear in English-language text.
+        Realistically, a deep learning model cannot actually conclude anything from a single sentence.
+        But after analyzing trillions of sentences, it could learn enough to predict how to logically finish
+        an incomplete sentence, or even generate its own sentences.
+        LLM neural networks
+        In order to enable this type of deep learning, LLMs are built on neural networks. An artificial
+        neural network (typically shortened to "neural network") is constructed with network nodes that
+        connect to each other. They are composed of several layers: an input layer, an output layer, and
+        one or more layers in between. The layers only pass information to each other if their own
+        outputs cross a certain threshold.
+        LLM transformer models
+        The specific kind of neural networks used by LLMs are called transformer models. Transformer
+        models are able to learn context — especially important for human language, which is highly
+        context-dependent. Transformer models use a mathematical technique called self-attention to
+        detect subtle ways that elements in a sequence relate to each other. This makes them better at
+        understanding context than other types of AI. It enables them to understand, for instance, how
+        the end of a sentence connects to the beginning, and how the sentences in a paragraph relate
+        to each other.
+        This enables LLMs to interpret human language, even when that language is vague or poorly
+        defined, arranged in combinations they have not encountered before, or contextualized in new
+        ways. They understand semantics in that they can associate words and concepts by their
+        meaning, having seen them grouped together in that way millions or billions of times.
+    </div>
+
+    <button id="doneBtn" disabled>Done Reading</button>
+    <p id="warning" style="text-align: center; margin-top: 5px; font-size: 14px; color: red;">
+        Note: Once you click "Done Reading", you will no longer be able to access the text.
+    </p>
+
+    <div id="quiz">
+        <h3>Comprehension Question:</h3>
+        <div class="question-box">
+            <p>What is a realistic conclusion that could be drawn about an LLM if trained on this text alone: "Cats
+                chase
+                curious critters across cozy corners"?</p>
+            <label><input type="radio" name="answer" value="A" class="option"> A) The LLM would likely learn that
+                sentences containing alliteration are more common than other sentence structures.</label><br>
+            <label><input type="radio" name="answer" value="B" class="option"> B) The LLM would likely conclude that
+                sentences mentioning animals are more common in English-language text.</label><br>
+            <label><input type="radio" name="answer" value="C" class="option"> C) The LLM would likely predict that the
+                letter "c" is more likely to appear in English-language text than other consonants, based on the
+                frequency in this sentence.</label><br>
+            <label><input type="radio" name="answer" value="D" class="option"> D) The LLM would likely generate
+                sentences about animals more frequently, as it would associate "cats" and "critters" with higher
+                relevance.</label><br>
+        </div>
+        <button id="submitBtn">Submit Answer</button>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        const doneBtn = document.getElementById('doneBtn');
+        const quiz = document.getElementById('quiz');
+        const submitBtn = document.getElementById('submitBtn');
+        let startTime = Date.now();
+
+        // Enable "Done Reading" when scrolling to bottom
+        container.addEventListener('scroll', () => {
+            const scrolledToBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 5;
+            if (scrolledToBottom) {
+                doneBtn.disabled = false;
+            }
+        });
+
+        // Show quiz after "Done Reading"
+        doneBtn.addEventListener('click', () => {
+            const totalTime = Math.round((Date.now() - startTime) / 1000);
+            container.style.display = 'none';
+            doneBtn.style.display = 'none';
+            quiz.style.display = 'block';
+
+            // Hide instructions and warning
+            document.getElementById('instructions').style.display = 'none';
+            document.getElementById('warning').style.display = 'none';
+
+            console.log(`Reading time: ${totalTime} seconds`);
+
+            // Log reading time
+            fetch("https://reading-logger.onrender.com", {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ event: "doneReading", timeSpent: totalTime, timestamp: Date.now() })
+            })
+                .then(() => console.log("Reading time logged successfully"))
+                .catch(err => console.error("Logging failed", err));
+        });
+
+        // Submit the quiz answer
+        submitBtn.addEventListener('click', () => {
+            const selectedOption = document.querySelector('input[name="answer"]:checked');
+            if (selectedOption) {
+                const answer = selectedOption.value;
+                alert(`You selected: ${answer}`);
+                console.log(`Answer: ${answer}`);
+
+                // Log the answer to the backend
+                fetch("https://reading-logger.onrender.com", {
+                    method: "POST",
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ event: "submitAnswer", answer: answer, timestamp: Date.now() })
+                })
+                    .then(() => console.log("Answer logged successfully"))
+                    .catch(err => console.error("Logging failed", err));
+            } else {
+                alert("Please select an answer.");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
