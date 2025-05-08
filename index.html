@@ -220,7 +220,7 @@
             console.log(`Reading time: ${totalTime} seconds`);
 
             // Log reading time
-            fetch("https://reading-logger.onrender.com", {
+            fetch("https://reading-logger-backend.onrender.com", {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ event: "doneReading", timeSpent: totalTime, timestamp: Date.now() })
@@ -238,7 +238,7 @@
                 console.log(`Answer: ${answer}`);
 
                 // Log the answer to the backend
-                fetch("https://reading-logger.onrender.com", {
+                fetch("https://reading-logger-backend.onrender.com", {
                     method: "POST",
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ event: "submitAnswer", answer: answer, timestamp: Date.now() })
