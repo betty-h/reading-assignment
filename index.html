@@ -4,88 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Scroll-Limited Reading with Quiz</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 40px;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        #container {
-            width: 600px;
-            margin: auto;
-            border: 2px solid #333;
-            height: 60px;
-            overflow-y: scroll;
-            padding: 20px;
-            line-height: 1.6;
-            background: #fdfdfd;
-            position: relative;
-        }
-
-        #container::before,
-        #container::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            height: 20px;
-            background: linear-gradient(to bottom, white, transparent);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        #container::after {
-            bottom: 0;
-            background: linear-gradient(to top, white, transparent);
-        }
-
-        #doneBtn,
-        #submitBtn {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-
-        #doneBtn:disabled {
-            opacity: 0.6;
-        }
-
-        #quiz {
-            display: none;
-            text-align: left;
-            margin: 20px auto;
-            width: 600px;
-        }
-
-        .question-box {
-            background: #f9f9f9;
-            /* Soft background color */
-            padding: 10px;
-            /* Padding for spacing */
-            margin-bottom: 10px;
-            /* Space below the question */
-        }
-
-        label {
-            display: block;
-            /* Each option on a new line */
-            /* margin: 5px 0; */
-            /* Space between options */
-        }
-
-        .option {
-            margin: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body oncontextmenu="return false">
@@ -175,8 +94,7 @@
         <h3>Comprehension Question:</h3>
         <div class="question-box">
             <p>What is a realistic conclusion that could be drawn about an LLM if trained on this text alone: "Cats
-                chase
-                curious critters across cozy corners"?</p>
+                chase curious critters across cozy corners"?</p>
             <label><input type="radio" name="answer" value="A" class="option"> A) The LLM would likely learn that
                 sentences containing alliteration are more common than other sentence structures.</label><br>
             <label><input type="radio" name="answer" value="B" class="option"> B) The LLM would likely conclude that
@@ -191,66 +109,7 @@
         <button id="submitBtn">Submit Answer</button>
     </div>
 
-    <script>
-        const container = document.getElementById('container');
-        const doneBtn = document.getElementById('doneBtn');
-        const quiz = document.getElementById('quiz');
-        const submitBtn = document.getElementById('submitBtn');
-        let startTime = Date.now();
-
-        // Enable "Done Reading" when scrolling to bottom
-        container.addEventListener('scroll', () => {
-            const scrolledToBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 5;
-            if (scrolledToBottom) {
-                doneBtn.disabled = false;
-            }
-        });
-
-        // Show quiz after "Done Reading"
-        doneBtn.addEventListener('click', () => {
-            const totalTime = Math.round((Date.now() - startTime) / 1000);
-            container.style.display = 'none';
-            doneBtn.style.display = 'none';
-            quiz.style.display = 'block';
-
-            // Hide instructions and warning
-            document.getElementById('instructions').style.display = 'none';
-            document.getElementById('warning').style.display = 'none';
-
-            console.log(`Reading time: ${totalTime} seconds`);
-
-            // Log reading time
-            fetch("https://reading-logger-backend.onrender.com", {
-                method: "POST",
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ event: "doneReading", timeSpent: totalTime, timestamp: Date.now() })
-            })
-                .then(() => console.log("Reading time logged successfully"))
-                .catch(err => console.error("Logging failed", err));
-        });
-
-        // Submit the quiz answer
-        submitBtn.addEventListener('click', () => {
-            const selectedOption = document.querySelector('input[name="answer"]:checked');
-            if (selectedOption) {
-                const answer = selectedOption.value;
-                alert(`You selected: ${answer}`);
-                console.log(`Answer: ${answer}`);
-
-                // Log the answer to the backend
-                fetch("https://reading-logger-backend.onrender.com", {
-                    method: "POST",
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ event: "submitAnswer", answer: answer, timestamp: Date.now() })
-                })
-                    .then(() => console.log("Answer logged successfully"))
-                    .catch(err => console.error("Logging failed", err));
-            } else {
-                alert("Please select an answer.");
-            }
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
