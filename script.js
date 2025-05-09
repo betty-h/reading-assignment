@@ -1,5 +1,5 @@
 // TODO: replace with backend URL once deployed
-const API_URL = "https://your-backend.onrender.app";
+const API_URL = "https://reading-logger-backend.onrender.com";
 
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("container");
