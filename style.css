@@ -33,14 +33,12 @@ body {
     left: 0;
     right: 0;
     height: 20px;
-    background: linear-gradient(to bottom, white, transparent);
     z-index: 1;
     pointer-events: none;
 }
 
 #container::after {
     bottom: 0;
-    background: linear-gradient(to top, white, transparent);
 }
 
 #container h1 {

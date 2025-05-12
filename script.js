@@ -97,10 +97,10 @@ const articles = [
         `,
         question: "Which of the following is a key way the o1 model differs from previous models?",
         options: [
-            "It uses less training data and fewer computing resources.",
-            "It generates outputs more quickly by skipping intermediate steps.",
-            "It spends more time solving for problems and revising the reasoning.",
-            "It is limited to math and cannot perform tasks in science or code."
+            "A) It uses less training data and fewer computing resources.",
+            "B) It generates outputs more quickly by skipping intermediate steps.",
+            "C) It spends more time solving for problems and revising the reasoning.",
+            "D) It is limited to math and cannot perform tasks in science or code."
         ]
     }
 ];
@@ -124,11 +124,12 @@ function showArticle(i) {
     instructions.style.display = "block";
     warning.style.display = "block";
 
+    // Reset scroll and re-disable Done button
+    container.scrollTop = 0;
+    doneBtn.disabled = true;
+
     // Hide quiz
     quiz.style.display = "none";
-
-    // Disable button until fully scrolled
-    doneBtn.disabled = true;
 
     // Timing
     globalStart = globalStart || Date.now();
