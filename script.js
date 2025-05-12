@@ -66,24 +66,52 @@ let current = 0;
 let globalStart, articleStart;
 
 function showArticle(i) {
-    document.getElementById("container").innerHTML = articles[i].content;
-    document.getElementById("doneBtn").disabled = true;
-    document.getElementById("quiz").style.display = "none";
-    document.getElementById("instructions").style.display = "block";
-    document.getElementById("warning").style.display = "block";
+    const container = document.getElementById("container");
+    const doneBtn = document.getElementById("doneBtn");
+    const quiz = document.getElementById("quiz");
+    const instructions = document.getElementById("instructions");
+    const warning = document.getElementById("warning");
+
+    // Inject content
+    container.innerHTML = articles[i].content;
+
+    // Show reading UI
+    container.style.display = "block";
+    doneBtn.style.display = "block";
+    instructions.style.display = "block";
+    warning.style.display = "block";
+
+    // Hide quiz
+    quiz.style.display = "none";
+
+    // Disable button until fully scrolled
+    doneBtn.disabled = true;
+
+    // Timing
     globalStart = globalStart || Date.now();
     articleStart = Date.now();
 }
 
 function showQuiz(i) {
-    document.getElementById("quiz-question").textContent = articles[i].question;
-    const opts = document.getElementById("quiz-options");
+    const container = document.getElementById("container");
+    const doneBtn = document.getElementById("doneBtn");
+    const quiz = document.getElementById("quiz");
+    const instructions = document.getElementById("instructions");
+    const warning = document.getElementById("warning");
+
+    // Hide reading UI
+    container.style.display = "none";
+    doneBtn.style.display = "none";
+    instructions.style.display = "none";
+    warning.style.display = "none";
+
+    // Populate and show quiz
+    quiz.querySelector("#quiz-question").textContent = articles[i].question;
+    const opts = quiz.querySelector("#quiz-options");
     opts.innerHTML = articles[i].options
         .map(o => `<label><input type="radio" name="answer" class="option"> ${o}</label>`)
         .join("");
-    document.getElementById("quiz").style.display = "block";
-    document.getElementById("instructions").style.display = "none";
-    document.getElementById("warning").style.display = "none";
+    quiz.style.display = "block";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -91,16 +119,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const doneBtn = document.getElementById("doneBtn");
     const submitBtn = document.getElementById("submitBtn");
 
-    // scroll listener
+    // Enable button when scrolled to bottom
     container.addEventListener("scroll", () => {
         if (container.scrollTop + container.clientHeight >= container.scrollHeight - 5) {
             doneBtn.disabled = false;
         }
     });
 
-    // initial render
+    // Initial article
     showArticle(current);
 
+    // Done Reading click
     doneBtn.addEventListener("click", () => {
         const readTime = Math.round((Date.now() - articleStart) / 1000);
         fetch(`${API_URL}/`, {
@@ -118,11 +147,12 @@ document.addEventListener("DOMContentLoaded", () => {
         showQuiz(current);
     });
 
+    // Submit Answer click
     submitBtn.addEventListener("click", () => {
         const sel = document.querySelector('input[name="answer"]:checked');
         if (!sel) return alert("Please select an answer.");
+        const ans = sel.parentNode.textContent.trim();
 
-        const answerText = sel.parentNode.textContent.trim();
         fetch(`${API_URL}/`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -130,12 +160,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 event: "submitAnswer",
                 sessionId,
                 article: current,
-                answer: answerText,
+                answer: ans,
                 timestamp: new Date().toISOString()
             })
         }).catch(console.error);
 
-        // move on or finish
+        // Next article or finish
         if (current < articles.length - 1) {
             current++;
             showArticle(current);
