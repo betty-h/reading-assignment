@@ -40,6 +40,39 @@ h2 {
     background: linear-gradient(to top, white, transparent);
 }
 
+#container h1 {
+    font-size: 2em;
+    margin-bottom: 0.2em;
+}
+
+#container .subtitle {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1.5em;
+}
+
+#container h2 {
+    font-size: 1.5em;
+    margin: 1.5em 0 0.5em;
+    font-weight: bold;
+}
+
+#container h3 {
+    font-size: 1.25em;
+    margin: 1.25em 0 0.5em;
+    font-weight: bold;
+}
+
+#container p {
+    margin: 0.75em 0;
+}
+
+#container p+p {
+    /* indent only subsequent paragraphs */
+    text-indent: 1em;
+}
+
 #doneBtn,
 #submitBtn {
     display: block;
