@@ -1,5 +1,6 @@
 // TODO: replace with backend URL once deployed
 const API_URL = "https://reading-logger-backend.onrender.com";
+const sessionId = crypto.randomUUID();
 
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("container");
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 event: "doneReading",
+                sessionId,
                 timeSpent: totalTime,
                 page: window.location.pathname,
                 timestamp: new Date().toISOString()
@@ -47,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 event: "submitAnswer",
+                sessionId,
                 answer,
                 page: window.location.pathname,
                 timestamp: new Date().toISOString()
