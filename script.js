@@ -1,59 +1,158 @@
-// TODO: replace with backend URL once deployed
+// your Flask endpoint
 const API_URL = "https://reading-logger-backend.onrender.com";
 const sessionId = crypto.randomUUID();
+
+// define all 3 articles and their questions
+const articles = [
+    {
+        // Article 1
+        content: `
+      <h1>What is a large language model (LLM)?</h1>
+      <p class="subtitle">
+        Large language models (LLMs) use machine learning to understand and generate text. They work by analyzing massive datasets of language.
+      </p>
+      <h2>What is a large language model (LLM)?</h2>
+      <p>A large language model (LLM) is a type of artificial intelligence (AI) that can understand and generate text. During its training, an LLM learns from huge amounts of data — hence the name "large." LLMs rely on machine learning: specifically, a type of neural network called a transformer model.</p>
+      <p>In simpler terms, an LLM is an AI that has been fed enough examples to be able to recognize and interpret human language or other types of complex data. Many LLMs are trained on data that has been gathered from the Internet — thousands or millions of gigabytes' worth of text. But the quality of the samples impacts how well the LLM will learn how to speak, so an LLM's programmers may use a more curated data set.</p>
+      <p>LLMs use a type of machine learning called deep learning in order to understand how characters, words, and sentences work together. Deep learning involves the probabilistic analysis of unstructured data, which eventually teaches the model to recognize distinctions between pieces of content without any human guidance.</p>
+      <p>LLMs are then further trained via tuning: they are fine-tuned or prompt-tuned to the particular task that the developer wants them to do, such as interpreting questions and generating responses, or translating text from one language to another.</p>
+      <h2>What are LLMs used for?</h2>
+      <p>LLMs can learn to perform a number of tasks. One of their most well-known forms is generative AI: When asked a question, they give a response in text. The publicly available LLM ChatGPT, for instance, can compose essays, poems, and other forms of writing to respond to the user.</p>
+      <p>Any large, complex data set can be training material for LLMs, including programming languages. LLMs can help programmers write code. They write functions upon request — or, given some code as a starting point, they can finish writing a program. LLMs can also analyze sentiment, assist in DNA research, provide customer service, chat with users, and enhance online search.</p>
+      <p>LLMs are prevalent in the real world with ChatGPT (from OpenAI), Bard (Google), Llama (Meta), and Bing Chat (Microsoft). GitHub's Copilot is another LLM, specializing in coding rather than natural language processing.</p>
+      <h2>How do large language models work?</h2>
+      <h3>Machine learning and deep learning</h3>
+      <p>At a basic level, LLMs are built with machine learning. Machine learning is a subset of AI, and it involves feeding an AI large amounts of data in order to train it to identify features of that data.</p>
+      <p>LLMs rely on a type of machine learning called deep learning. Deep learning models can essentially train themselves to recognize distinctions without human intervention, although some human help is typically necessary.</p>
+      <p>Deep learning uses probability in order to learn. For instance, in the sentence "The quick brown fox jumped over the lazy dog," the letters "e" and "o" are the most common, appearing four times each. From this, a deep learning model could conclude (correctly) that these characters are among the most likely to appear in English-language text.</p>
+      <p>Realistically, a deep learning model cannot actually conclude anything from a single sentence. But after analyzing trillions of sentences, it could learn enough to predict how to logically finish an incomplete sentence, or even generate its own sentences.</p>
+      <h3>LLM neural networks</h3>
+      <p>In order to enable this type of deep learning, LLMs are built on neural networks. An artificial neural network (typically shortened to "neural network") is constructed with network nodes that connect to each other. They are composed of several layers: an input layer, an output layer, and one or more layers in between. The layers only pass information to each other if their own outputs cross a certain threshold.</p>
+      <h3>LLM transformer models</h3>
+      <p>The specific kind of neural networks used by LLMs are called transformer models. Transformer models are able to learn context — especially important for human language, which is highly context-dependent. Transformer models use a mathematical technique called self-attention to detect subtle ways that elements in a sequence relate to each other. This makes them better at understanding context than other types of AI. It enables them to understand, for instance, how the end of a sentence connects to the beginning, and how the sentences in a paragraph relate to each other.</p>
+      <p>This enables LLMs to interpret human language, even when that language is vague or poorly defined, arranged in combinations they have not encountered before, or contextualized in new ways. They understand semantics in that they can associate words and concepts by their meaning, having seen them grouped together in that way millions or billions of times.</p>
+    `,
+        question: `What is a realistic conclusion that could be drawn about an LLM if trained on this text alone: "Cats chase curious critters across cozy corners"?`,
+        options: [
+            "A) The LLM would likely learn that sentences containing alliteration are more common than other sentence structures.",
+            "B) The LLM would likely conclude that sentences mentioning animals are more common in English-language text.",
+            "C) The LLM would likely predict that the letter \"c\" is more likely to appear in English-language text than other consonants, based on the frequency in this sentence.",
+            "D) The LLM would likely generate sentences about animals more frequently, as it would associate \"cats\" and \"critters\" with higher relevance."
+        ]
+    },
+    {
+        // Article 2 (copy same pattern: put <h2> … and <p> …)
+        content: `
+      <h1>Article 2 Title Here</h1>
+      <p class="subtitle">Subtitle or intro paragraph for article 2…</p>
+      <!-- more headings & paragraphs -->
+    `,
+        question: "Your second comprehension question here?",
+        options: ["A) …", "B) …", "C) …", "D) …"]
+    },
+    {
+        // Article 3
+        content: `
+      <h1>Article 3 Title Here</h1>
+      <p class="subtitle">Subtitle or intro paragraph for article 3…</p>
+      <!-- more headings & paragraphs -->
+    `,
+        question: "Your third comprehension question here?",
+        options: ["A) …", "B) …", "C) …", "D) …"]
+    }
+];
+
+let current = 0;
+let globalStart, articleStart;
+
+function showArticle(i) {
+    document.getElementById("container").innerHTML = articles[i].content;
+    document.getElementById("doneBtn").disabled = true;
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("instructions").style.display = "block";
+    document.getElementById("warning").style.display = "block";
+    globalStart = globalStart || Date.now();
+    articleStart = Date.now();
+}
+
+function showQuiz(i) {
+    document.getElementById("quiz-question").textContent = articles[i].question;
+    const opts = document.getElementById("quiz-options");
+    opts.innerHTML = articles[i].options
+        .map(o => `<label><input type="radio" name="answer" class="option"> ${o}</label>`)
+        .join("");
+    document.getElementById("quiz").style.display = "block";
+    document.getElementById("instructions").style.display = "none";
+    document.getElementById("warning").style.display = "none";
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("container");
     const doneBtn = document.getElementById("doneBtn");
-    const quiz = document.getElementById("quiz");
     const submitBtn = document.getElementById("submitBtn");
-    let startTime = Date.now();
 
-    // Enable "Done Reading" when scrolled to bottom
+    // scroll listener
     container.addEventListener("scroll", () => {
-        const scrolledToBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 5;
-        if (scrolledToBottom) doneBtn.disabled = false;
+        if (container.scrollTop + container.clientHeight >= container.scrollHeight - 5) {
+            doneBtn.disabled = false;
+        }
     });
 
-    // Show quiz and log reading time
-    doneBtn.addEventListener("click", () => {
-        const totalTime = Math.round((Date.now() - startTime) / 1000);
-        container.style.display = "none";
-        doneBtn.style.display = "none";
-        quiz.style.display = "block";
-        document.getElementById("instructions").style.display = "none";
-        document.getElementById("warning").style.display = "none";
+    // initial render
+    showArticle(current);
 
+    doneBtn.addEventListener("click", () => {
+        const readTime = Math.round((Date.now() - articleStart) / 1000);
         fetch(`${API_URL}/`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 event: "doneReading",
                 sessionId,
-                timeSpent: totalTime,
-                page: window.location.pathname,
+                article: current,
+                timeSpent: readTime,
                 timestamp: new Date().toISOString()
             })
         }).catch(console.error);
+
+        showQuiz(current);
     });
 
-    // Submit quiz answer and log it
     submitBtn.addEventListener("click", () => {
-        const selected = document.querySelector('input[name="answer"]:checked');
-        if (!selected) { alert("Please select an answer."); return; }
-        const answer = selected.value;
-        alert(`You selected: ${answer}`);
+        const sel = document.querySelector('input[name="answer"]:checked');
+        if (!sel) return alert("Please select an answer.");
 
+        const answerText = sel.parentNode.textContent.trim();
         fetch(`${API_URL}/`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 event: "submitAnswer",
                 sessionId,
-                answer,
-                page: window.location.pathname,
+                article: current,
+                answer: answerText,
                 timestamp: new Date().toISOString()
             })
         }).catch(console.error);
+
+        // move on or finish
+        if (current < articles.length - 1) {
+            current++;
+            showArticle(current);
+        } else {
+            const totalTime = Math.round((Date.now() - globalStart) / 1000);
+            fetch(`${API_URL}/`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    event: "sessionComplete",
+                    sessionId,
+                    totalTime,
+                    timestamp: new Date().toISOString()
+                })
+            }).catch(console.error);
+
+            alert(`All done! Total time: ${totalTime}s`);
+        }
     });
 });
