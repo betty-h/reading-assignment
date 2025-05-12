@@ -7,8 +7,11 @@ body {
     user-select: none;
 }
 
-h2 {
+#page-title {
     text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 1em;
 }
 
 #container {
@@ -41,36 +44,40 @@ h2 {
 }
 
 #container h1 {
-    font-size: 2em;
-    margin-bottom: 0.2em;
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+    text-align: left;
+    font-weight: bold;
 }
 
 #container .subtitle {
-    font-size: 1.2em;
-    font-style: italic;
+    font-size: 1.15em;
+    font-style: normal;
     color: #555;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.25em;
+    text-align: left;
 }
 
 #container h2 {
-    font-size: 1.5em;
-    margin: 1.5em 0 0.5em;
+    font-size: 1.25em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    text-align: left;
     font-weight: bold;
 }
 
 #container h3 {
-    font-size: 1.25em;
-    margin: 1.25em 0 0.5em;
+    font-size: 1.0em;
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
+    text-align: left;
     font-weight: bold;
 }
 
 #container p {
     margin: 0.75em 0;
-}
-
-#container p+p {
-    /* indent only subsequent paragraphs */
-    text-indent: 1em;
+    text-indent: 0;
+    text-align: left;
 }
 
 #doneBtn,
