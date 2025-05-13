@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
             }).catch(console.error);
 
-            alert(`All done! Total time: ${totalTime}s`);
+            alert(`You have completed this portion of the study. Please close the tab and return to the Google Form.`);
         }
     });
 });
