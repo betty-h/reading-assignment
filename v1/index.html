@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll-Limited Reading with Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body oncontextmenu="return false">
+
+    <h2 id="page-title">Reading Assignment</h2>
+
+    <div id="instructions" style="text-align: center; margin-bottom: 10px; font-size: 16px; color: #333;">
+        Please read the following passage. Then click “Done Reading” to proceed to the comprehension question.
+    </div>
+
+    <div id="container"></div>
+    <button id="doneBtn" disabled>Done Reading</button>
+    <p id="warning" style="text-align: center; margin-top: 5px; font-size: 14px; color: red;">
+        Note: Once you click “Done Reading”, you will no longer be able to access the text.
+    </p>
+
+    <div id="quiz">
+        <h3 id="quiz-question"></h3>
+        <div class="question-box" id="quiz-options"></div>
+        <button id="submitBtn">Submit Answer</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

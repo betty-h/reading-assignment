@@ -1,0 +1,112 @@
+body {
+    font-family: sans-serif;
+    margin: 40px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#page-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+#container {
+    width: 600px;
+    margin: auto;
+    border: 2px solid #333;
+    height: 60px;
+    overflow-y: scroll;
+    padding: 20px;
+    line-height: 1.6;
+    background: #fdfdfd;
+    position: relative;
+}
+
+#container::before,
+#container::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 20px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#container::after {
+    bottom: 0;
+}
+
+#container h1 {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+    text-align: left;
+    font-weight: bold;
+}
+
+#container .subtitle {
+    font-size: 1.15em;
+    font-style: normal;
+    color: #555;
+    margin-bottom: 0.25em;
+    text-align: left;
+}
+
+#container h2 {
+    font-size: 1.25em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    text-align: left;
+    font-weight: bold;
+}
+
+#container h3 {
+    font-size: 1.0em;
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
+    text-align: left;
+    font-weight: bold;
+}
+
+#container p {
+    margin: 0.75em 0;
+    text-indent: 0;
+    text-align: left;
+}
+
+#doneBtn,
+#submitBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#doneBtn:disabled {
+    opacity: 0.6;
+}
+
+#quiz {
+    display: none;
+    text-align: left;
+    margin: 20px auto;
+    width: 600px;
+}
+
+.question-box {
+    background: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+}
+
+.option {
+    margin: 5px;
+}
