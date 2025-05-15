@@ -30,12 +30,12 @@ const articles = [
             <p>The specific kind of neural networks used by LLMs are called transformer models. Transformer models are able to learn context — especially important for human language, which is highly context-dependent. Transformer models use a mathematical technique called self-attention to detect subtle ways that elements in a sequence relate to each other. This makes them better at understanding context than other types of AI. It enables them to understand, for instance, how the end of a sentence connects to the beginning, and how the sentences in a paragraph relate to each other.</p>
             <p>This enables LLMs to interpret human language, even when that language is vague or poorly defined, arranged in combinations they have not encountered before, or contextualized in new ways. They understand semantics in that they can associate words and concepts by their meaning, having seen them grouped together in that way millions or billions of times.</p>
             `,
-        question: `Which of the following best describes the role of deep learning in training LLMs?`,
+        question: `Which of the following statements about large language models is NOT mentioned in the passage?`,
         options: [
-            "A) It feeds the model labeled datasets so it can categorize data accurately.",
-            "B) It uses handcrafted rules to teach the model language grammar.",
-            "C) It enables the model to recognize patterns and distinctions probabilistically without explicit human instructions.",
-            "D) It stores user queries to improve the model's performance over time."
+            "A) The training data for LLMs primarily consists of vast amounts of text drawn from internet sources.",
+            "B) LLMs use deep learning which involves the probabilistic analysis of unstructured data.",
+            "C) LLMs use a specific neural network architecture called the transformer model.",
+            "D) LLMs often contain billions or trillions of parameters, making them computationally intensive to train."
         ]
     },
     {
@@ -69,12 +69,12 @@ const articles = [
           <p>This isn’t only about guiding AI’s growth—it’s about anticipating risk, too. Many of the researchers working on the theory behind deep learning are motivated by safety concerns over future models. “We don’t know what abilities GPT-5 will have until it’s trained and tested,” says Rosales. “It might be a medium-size problem right now, but it will become a really big problem in the future as models become more powerful.”</p>
           <p>Marks works on OpenAI’s superalignment team, which was set up by the firm’s chief scientist, Ilya Sutskever, to figure out how to stop a hypothetical superintelligence from going rogue. “I’m very interested in getting guarantees,” he says. “If you can do amazing things but you can’t control it, then it’s not so amazing. What good is a car that can drive 300 miles per hour if it has a shaky steering wheel?”</p>
         `,
-        question: "How do large language models defy expectations based on classical statistics?",
+        question: "According to the article, why is it important to understand the theoretical underpinnings of large language models?",
         options: [
-            "A) They only work when trained on labeled data.",
-            "B) They behave predictably and consistently across tasks.",
-            "C) They generalize to unfamiliar tasks and domains in ways theory cannot fully explain.",
-            "D) They fail to perform well outside of narrow benchmarks."
+            "A) To enhance fluency in generated text and poetry",
+            "B) To understand and mitigate the risks of future models",
+            "C) To reduce the computational resources required for training",
+            "D) To make large language models more effective in automated code‐writing tasks"
         ]
     },
     {
@@ -95,12 +95,12 @@ const articles = [
             <p>This is only the beginning of what these reasoning models will be able to achieve, and we are showing them in ChatGPT and the API. In addition to model improvements, we expect them to gain browsing, file and image uploading, and other capabilities to better assist everyone.</p>
             <p>We also plan to keep expanding their capabilities and releasing models in our GPT series, in addition to the new OpenAI o1 series. </p>
         `,
-        question: "Which of the following is a key way the o1 model differs from previous models?",
+        question: "Which safety training method does the article describe for o1-preview?",
         options: [
-            "A) It uses less training data and fewer computing resources.",
-            "B) It generates outputs more quickly by skipping intermediate steps.",
-            "C) It spends more time solving for problems and revising the reasoning.",
-            "D) It is limited to math and cannot perform tasks in science or code."
+            "A) Embedding filters to block bad content after it is generated",
+            "B) Using reinforcement learning from human feedback",
+            "C) Having the model reason about safety rules in context",
+            "D) Training the model on sets of difficult, adversarial examples"
         ]
     }
 ];
