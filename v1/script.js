@@ -1,6 +1,7 @@
 // your Flask endpoint
 const API_URL = "https://reading-logger-backend.onrender.com";
 const sessionId = crypto.randomUUID();
+const version = 1; //llm-anthro
 
 // define all 3 articles and their questions
 const articles = [
@@ -182,6 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
             body: JSON.stringify({
                 event: "doneReading",
                 sessionId,
+                version,
                 article: current,
                 timeSpent: readTime,
                 timestamp: new Date().toISOString()
@@ -203,6 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
             body: JSON.stringify({
                 event: "submitAnswer",
                 sessionId,
+                version,
                 article: current,
                 answer: ans,
                 timestamp: new Date().toISOString()
@@ -221,6 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify({
                     event: "sessionComplete",
                     sessionId,
+                    version,
                     totalTime,
                     timestamp: new Date().toISOString()
                 })
