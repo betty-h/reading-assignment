@@ -229,7 +229,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
             }).catch(console.error);
 
-            alert(`You have completed this portion of the study. Please close the tab and return to the Google Form.`);
+            // Show the sessionId as a completion code
+            alert(
+                `You have completed this portion of the study.\n\n` +
+                `Your completion code is:\n${sessionId}\n\n` +
+                `Please copy the code and paste it into the Google Form, then complete the remaining tasks in the study.\n\n` +
+                `You may close this tab.`
+            );
+            // Prevent any further submissions
+            submitBtn.disabled = true;
         }
     });
 });
