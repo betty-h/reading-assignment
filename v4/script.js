@@ -54,7 +54,7 @@ const articles = [
           <p>Amazon’s recommendation systems started out using a method called collaborative filtering, which generates recommendations based on the similarities between how users behave across a website. But as the company’s pool of user data grew and it sold millions of items to millions of people, it began to pioneer the use of content-based recommendation systems, in which users are matched to products based on the features of the individual product. </p>
           <p>You see these recommendation systems being employed when Amazon makes (often accurate) recommendations on what you should buy next. However, it’s no longer like those early days. Then, you’d receive a simple recommendation solely on your purchase history. Today, you get tons of different types of recommendations based not only on what you’ve bought, but also on what you’ve viewed, what you’ve expressed interest in, and your digital shopping trends. </p>
           <p>With modern times come modern challenges. There are three big challenges with modern recommender systems like Amazon’s, says Robyn Durham, vice president of applied science in Amazon’s International Emerging Stores division.</p>
-          <p>The first is asymmetry, or relationships that run in only a single direction. Plenty of product recommendations are asymmetrical.: if you buy a phone, you recommend a phone case. Pretty easy. But it doesn’t go the other way: If you buy a phone case, you don’t want to recommend a phone.</p>
+          <p>The first is asymmetry, or relationships that run in only a single direction. Plenty of product recommendations are asymmetrical: if you buy a phone, you recommend a phone case. Pretty easy. But it doesn’t go the other way: If you buy a phone case, you don’t want to recommend a phone.</p>
           <p>Amazon’s team uses graph neural networks (GNNs) to enhance the computations of recommendation systems by providing additional context on the relationships between products, helping address asymmetrical product recommendations.</p>
           <p>Another major challenge is delayed feedback. This is a common problem that refers to the fact that the labels on data used to train recommendation systems may change over time. Durham and their team solve this problem by using novel techniques to predict how likely it is that a label will change in the future, and weigh it accordingly. </p>
           <p>Finally, improving the accuracy of recommendation systems is a perennial challenge. One way Durham and their team are addressing this is by estimating the uncertainty inherent in probability distributions returned by the system. For example, there might be a wide range of probability predictions on whether a customer buys a product; the uncertainty estimate expresses how certain one can be about those predicted probabilities, which enhances overall model accuracy.</p>
@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alert(
                 `You have completed this portion of the study.\n\n` +
                 `Your completion code is:\n${sessionId}\n\n` +
-                `Please copy the code and paste it into the Google Form, then complete the remaining tasks in the study.\n\n` +
+                `Please copy the code it into the Google Form, then complete the remaining tasks in the study.\n\n` +
                 `You may close this tab.`
             );
             // Prevent any further submissions
