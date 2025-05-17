@@ -1,6 +1,6 @@
 // your Flask endpoint
 const API_URL = "https://reading-logger-backend.onrender.com";
-const sessionId = crypto.randomUUID();
+const sessionId = crypto.randomUUID().split('-')[0];
 const version = 3; //rec-anthro
 
 // define all 3 articles and their questions
