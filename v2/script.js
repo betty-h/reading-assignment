@@ -71,10 +71,10 @@ const articles = [
         `,
         question: "According to the article, why is it important to understand the theoretical underpinnings of large language models?",
         options: [
-            "A) To enhance fluency in generated text and poetry",
-            "B) To understand and mitigate the risks of future models",
+            "A) To refine the style and fluency of generated text for poetry",
+            "B) To anticipate, understand, and mitigate the risks of future models",
             "C) To reduce the computational resources required for training",
-            "D) To make large language models more effective in automated code‐writing tasks"
+            "D) To boost performance specifically on automated code-writing tasks"
         ]
     },
     {
@@ -95,12 +95,12 @@ const articles = [
             <p>This is an early preview of these models in ChatGPT and the API. In addition to model updates, we expect to add browsing, file and image uploading functions, and other features to make them more useful to everyone. </p>
             <p>We also plan to continue developing and deploying models in our GPT series, in addition to the new OpenAI o1 series. </p>
         `,
-        question: "Which safety training method does the article describe for o1-preview?",
+        question: "According to the passage, what is the primary advancement of the OpenAI o1-preview models compared to earlier AI models?",
         options: [
-            "A) Embedding filters to block bad content after it is generated",
-            "B) Using reinforcement learning from human feedback",
-            "C) Having the model reason about safety rules in context",
-            "D) Training the model on sets of difficult, adversarial examples"
+            "A) Reduced the time taken to generate responses across all task typesd",
+            "B) Introduced an in-depth computational process that improves reasoning for complex problems",
+            "C) Switched from transformer architectures to convolutional neural networks",
+            "D) Doubled the size of the training dataset without changing the model’s reasoning steps"
         ]
     }
 ];
