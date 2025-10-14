@@ -30,12 +30,12 @@ const articles = [
             `,
         questions: [
             {
-                prompt: `Which of the following statements about recommenders is NOT mentioned in the passage?`,
+                prompt: `Which of the following statements about recommendation systems is NOT mentioned in the passage?`,
                 options: [
-                    "A) Recommenders use data such as impressions, clicks, likes, and purchases for training.",
-                    "B) Recommenders have been shown to boost e-commerce conversion rates",
-                    "C) Recommenders are widely used in news apps to surface relevant articles.",
-                    "D) Algorithms for recommenders include collaborative, content, and context filtering approaches."
+                    "A) Recommendation systems use data such as impressions, clicks, likes, and purchases for training.",
+                    "B) Recommendation systems have been shown to boost e-commerce conversion rates",
+                    "C) Recommendation systems are widely used in news apps to surface relevant articles.",
+                    "D) Algorithms for recommendation systems include collaborative, content, and context filtering approaches."
                 ]
             },
             {
@@ -48,7 +48,7 @@ const articles = [
                 ]
             },
             {
-                prompt: `According to the passage, why is banking considered a strong use case for recommenders?`,
+                prompt: `According to the passage, why is banking considered a strong use case for recommendation systems?`,
                 options: [
                     "A) Banks need help with managing their employees",
                     "B) Banking is a digital mass-market product consumed by millions",
@@ -112,7 +112,7 @@ const articles = [
                 ]
             },
             {
-                prompt: "According to McAuley, what is the key factor in making strong recommendations?",
+                prompt: "According to Goodwin, what is the key factor in making strong recommendations?",
                 options: [
                     "A) The size of the engineering team",
                     "B) Having great data",
@@ -158,7 +158,7 @@ const articles = [
                 ]
             },
             {
-                prompt: "Why are the large “multidimensional tables” used by recommenders described as “sparse”?",
+                prompt: "Why are the large “multidimensional tables” used by recommendation systems described as “sparse”?",
                 options: [
                     "A) They delete old user records to save space.",
                     "B) They compress data using sparse matrix techniques.",
