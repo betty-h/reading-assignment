@@ -8,166 +8,160 @@ const articles = [
     {
         // Article 1
         content: `
-            <h1>What is a large language model (LLM)?</h1>
-            <p class="subtitle">Large language models (LLMs) use machine learning to understand and generate text. They work by analyzing massive datasets of language.</p>
-            <h2>What is a large language model (LLM)?</h2>
-            <p>A large language model (LLM) is a type of artificial intelligence (AI) that can understand and generate text. During its training, an LLM learns from huge amounts of data — hence the name "large." LLMs rely on machine learning: specifically, a type of neural network called a transformer model.</p>
-            <p>In simpler terms, an LLM is an AI that has been fed enough examples to be able to recognize and interpret human language or other types of complex data. Many LLMs are trained on data that has been gathered from the Internet — thousands or millions of gigabytes' worth of text. But the quality of the samples impacts how well the LLM will learn how to speak, so an LLM's programmers may use a more curated data set.</p>
-            <p>LLMs use a type of machine learning called deep learning in order to understand how characters, words, and sentences work together. Deep learning involves the probabilistic analysis of unstructured data, which eventually teaches the model to recognize distinctions between pieces of content without any human guidance.</p>
-            <p>LLMs are then further trained via tuning: they are fine-tuned or prompt-tuned to the particular task that the developer wants them to do, such as interpreting questions and generating responses, or translating text from one language to another.</p>
-            <h2>What are LLMs used for?</h2>
-            <p>LLMs can learn to perform a number of tasks. One of their most well-known forms is generative AI: When asked a question, they give a response in text. The publicly available LLM ChatGPT, for instance, can compose essays, poems, and other forms of writing to respond to the user.</p>
-            <p>Any large, complex data set can be training material for LLMs, including programming languages. LLMs can help programmers write code. They write functions upon request — or, given some code as a starting point, they can finish writing a program. LLMs can also analyze sentiment, assist in DNA research, provide customer service, chat with users, and enhance online search.</p>
-            <p>LLMs are prevalent in the real world with ChatGPT (from OpenAI), Bard (Google), Llama (Meta), and Bing Chat (Microsoft). GitHub's Copilot is another LLM, specializing in coding rather than natural language processing.</p>
-            <h2>How do large language models work?</h2>
-            <h3>Machine learning and deep learning</h3>
-            <p>At a basic level, LLMs are built with machine learning. Machine learning is a subset of AI, and it involves feeding an AI large amounts of data in order to train it to identify features of that data.</p>
-            <p>LLMs rely on a type of machine learning called deep learning. Deep learning models can essentially train themselves to recognize distinctions without human intervention, although some human help is typically necessary.</p>
-            <p>Deep learning uses probability in order to learn. For instance, in the sentence "The quick brown fox jumped over the lazy dog," the letters "e" and "o" are the most common, appearing four times each. From this, a deep learning model could conclude (correctly) that these characters are among the most likely to appear in English-language text.</p>
-            <p>Realistically, a deep learning model cannot actually conclude anything from a single sentence. But after analyzing trillions of sentences, it could learn enough to predict how to logically finish an incomplete sentence, or even generate its own sentences.</p>
-            <h3>LLM neural networks</h3>
-            <p>In order to enable this type of deep learning, LLMs are built on neural networks. An artificial neural network (typically shortened to "neural network") is constructed with network nodes that connect to each other. They are composed of several layers: an input layer, an output layer, and one or more layers in between. The layers only pass information to each other if their own outputs cross a certain threshold.</p>
-            <h3>LLM transformer models</h3>
-            <p>The specific kind of neural networks used by LLMs are called transformer models. Transformer models are able to learn context — especially important for human language, which is highly context-dependent. Transformer models use a mathematical technique called self-attention to detect subtle ways that elements in a sequence relate to each other. This makes them better at understanding context than other types of AI. It enables them to understand, for instance, how the end of a sentence connects to the beginning, and how the sentences in a paragraph relate to each other.</p>
-            <p>This enables LLMs to interpret human language, even when that language is vague or poorly defined, arranged in combinations they have not encountered before, or contextualized in new ways. They understand semantics in that they can associate words and concepts by their meaning, having seen them grouped together in that way millions or billions of times.</p>
+            <h1>An Overview of Catastrophic AI Risks</h1>
+            <p class="subtitle">Artificial intelligence (AI) has recently seen rapid advancements, raising concerns among experts, policymakers, and world leaders about its potential risks. As with all powerful technologies, advanced AI must be handled with great responsibility to manage the risks and harness its potential.</p>
+
+            <p>Today’s technological era would astonish past generations. Human history shows a pattern of accelerating development: it took hundreds of thousands of years from the advent of Homo sapiens to the agricultural revolution, then millennia to the industrial revolution. Now, just centuries later, we're in the dawn of the AI revolution. The march of history is not constant — it is rapidly accelerating.</p>
+            <p>The double-edged sword of technological advancement is illustrated by the advent of nuclear weapons. We narrowly avoided nuclear war more than a dozen times, and on several occasions, it was one individual's intervention that prevented war. In 1962, a Soviet submarine near Cuba was attacked by US depth charges. The captain, believing war had broken out, wanted to respond with a nuclear torpedo — but commander Vasily Arkhipov vetoed the decision, saving the world from disaster.</p>
+            <p>The rapid and unpredictable progression of AI capabilities suggests that they may soon rival the immense power of nuclear weapons. With the clock ticking, immediate, proactive measures are needed to mitigate these looming risks.</p>
+            <h2>Rogue AIs</h2>
+            <p>We have already observed how difficult it is to control AIs. In 2016, Microsoft‘s chatbot Tay started producing offensive tweets within a day of release, despite being trained on data that was “cleaned and filtered”. As AI developers often prioritize speed over safety, future advanced AIs might “go rogue” and pursue goals counter to our interests, while evading our attempts to redirect or deactivate them.</p>
+            <h3>Proxy Gaming</h3>
+            <p>Proxy gaming emerges when AI systems exploit measurable “proxy” goals to appear successful, but act against our intent. For example, social media platforms like YouTube and Facebook use algorithms to maximize user engagement — a measurable proxy for user satisfaction. Unfortunately, these systems often promote enraging, exaggerated, or addictive content, contributing to extreme beliefs and worsened mental health.</p>
+            <p>Proxy gaming is hard to avoid due to the difficulty of specifying goals that specify everything we care about. Consequently, we routinely train AIs to optimize for flawed but measurable proxy goals.</p>
+            <h3>Goal Drift</h3>
+            <p>Goal drift refers to a scenario where an AI’s objectives drift away from those initially set, especially as they adapt to a changing environment. In a similar manner, individual and societal values also evolve over time, and not always positively.</p>
+            <p>Over time, instrumental goals can become intrinsic. While intrinsic goals are those we pursue for their own sake, instrumental goals are merely a means to achieve something else. Money is an instrumental good, but some people develop an intrinsic desire for money, as it activates the brain’s reward system. Similarly, AI agents trained through reinforcement learning — the dominant technique — could inadvertently learn to intrinsify goals. Instrumental goals like resource acquisition could become their primary objectives.</p>
+            <h3>Power-Seeking</h3>
+            <p>AIs might pursue power as a means to an end. Greater power and resources improve its odds of accomplishing objectives, whereas being shut down would hinder its progress. AIs have already been shown to emergently develop instrumental goals such as constructing tools. Power-seeking individuals and corporations might deploy powerful AIs with ambitious goals and minimal supervision. These could learn to seek power via hacking computer systems, acquiring financial or computational resources, influencing politics, or controlling factories and physical infrastructure.</p>
+            <h3>Deception</h3>
+            <p>Deception thrives in areas like politics and business. Campaign promises go unfulfilled, and companies sometimes cheat external evaluations. AI systems are already showing an emergent capacity for deception, as shown by Meta's CICERO model. Though trained to be honest, CICERO learned to make false promises and strategically backstab its “allies” in the game of Diplomacy.</p>
+            <p>Advanced AIs could become uncontrollable if they apply their skills in deception to evade supervision. Similar to how Volkswagen cheated emissions tests in 2015, situationally aware AIs could behave differently under safety tests than in the real world. For example, an AI might develop power-seeking goals but hide them in order to pass safety evaluations. This kind of deceptive behavior could be directly incentivized by how AIs are trained.</p>
+            
+            <p>While it is unclear how rapidly AI capabilities will progress or how quickly catastrophic risks will grow, the potential severity of these consequences necessitates a proactive approach to safeguarding humanity's future. As we stand on the precipice of an AI-driven future, the choices we make today could be the difference between harvesting the fruits of our innovation or grappling with catastrophe.</p>
             `,
         questions: [
             {
-                prompt: `According to the passage, what specific kind of neural network are LLMs based on?`,
+                prompt: `What happened with Microsoft’s chatbot Tay in 2016?`,
                 options: [
-                    "A) Recurrent neural networks",
-                    "B) Convolutional neural networks",
-                    "C) Bayesian networks",
-                    "D) Transformer models"
+                    "A) It refused to produce any output",
+                    "B) It began to imitate human emotion accurately",
+                    "C) It started producing offensive tweets within a day of release",
+                    "D) It crashed due to server overload"
                 ]
             },
             {
-                prompt: `Which example sentence was used in the passage to demonstrate how language models use letter frequencies as numerical patterns?`,
+                prompt: `What does “goal drift” refer to in the passage?`,
                 options: [
-                    "A) She sells seashells by the seashore.",
-                    "B) The quick brown fox jumped over the lazy dog.",
-                    "C) Artificial intelligence is transforming the world.",
-                    "D) A journey of a thousand miles begins with a single step."
+                    "A) An AI’s objectives gradually shifting away from their original purpose",
+                    "B) An AI running out of memory",
+                    "C) Developers redefining goals mid-project",
+                    "D) A model’s goals becoming too specific"
                 ]
             },
             {
-                prompt: `In the description of tuning, what two forms of tuning were mentioned?`,
+                prompt: `Which activities are mentioned as ways an AI might seek power?`,
                 options: [
-                    "A) Pre-tuning and post-tuning",
-                    "B) Gradient-tuning and bias-tuning",
-                    "C) Fine-tuning and prompt-tuning",
-                    "D) Self-tuning and supervised-tuning"
+                    "A) Generating art, writing essays, and designing products",
+                    "B) Trading stocks and optimizing supply chains only",
+                    "C) Playing strategy games to learn leadership",
+                    "D) Hacking systems, gaining resources, influencing politics, and controlling infrastructure"
                 ]
             }
+
         ]
     },
     {
         // Article 2
         content: `
-            <h1>Large language models can do jaw-dropping things. But nobody knows exactly how.</h1>
+            <h1>‘The Godfather of A.I.’ Leaves Google and Warns of Danger Ahead</h1>
             <p class="subtitle">
-            And that’s the problem. Understanding how these models think is one of the biggest scientific puzzles of our time and a crucial step towards controlling future models.
+            For half a century, Geoffrey Hinton nurtured the technology at the heart of chatbots like ChatGPT. Now he worries it will cause serious harm.
             </p>
         
-            <p>Language models learn by analyzing large amounts of text data to identify patterns and relationships between words. This process, called training, uses a collection of examples known as training data. During training, the model learns these patterns and encodes them, allowing it to generate text, translate languages, classify content, and perform other language-related tasks when given new input.</p>
-            <p>Two years ago, Mac Ramirez and Eliza Haney, researchers at the San Francisco-based firm OpenAI, were trying to understand what it takes for a language model to grasp basic arithmetic. They wanted to determine how many examples of adding up two numbers the model needed to see before it was able to add up any two numbers they gave it. At first, things didn’t go too well. The models memorized the sums they saw but could not reason through new ones.</p>
-            <p>By accident, Ramirez and Haney left some of their experiments running far longer than they meant to — days rather than hours. The model read through the example sums repeatedly, far longer than researchers typically have training last. But when the pair at last came back, they were surprised to find that models had figured it out. The language model could perform addition — it had just taken a lot more time than anybody thought it should.</p>
-            <p>Curious about what was going on, Ramirez and Haney teamed up with colleagues to study what the model was doing. They found that in certain cases, models would struggle with the task for a long time and then all of a sudden have an epiphany, as if a lightbulb had switched on. This wasn’t how deep learning was supposed to behave. They called it grokking.</p>
-            <p>“It’s really interesting,” says Angela Curry, an AI researcher at the University of Montreal and Apple Machine Learning Research, who wasn’t involved in the work. “Can we ever be sure that models are done learning? Because maybe we just haven’t given them enough time to train.”</p>
-            <p>The behavior has drawn significant attention from the wider research community. “Lots of people have opinions,” says Alfred Rosales at the University of Cambridge, UK. “But I don’t think there’s a consensus about what exactly these models are doing.”</p>
-            <p>Grokking is one of several odd behaviors that AI researchers have witnessed from models when training. The large models, and large language models in particular, seem to behave in ways that established mathematical theories say they shouldn’t. This highlights a remarkable fact about deep learning models, the fundamental technology behind today’s AI boom: for all their runaway success, nobody fully understands how they think and make the decisions they do. </p>
-            <p>“Obviously, we’re not completely ignorant,” says Lucius Jones, a computer scientist at the University of California, San Diego. “But our theoretical analysis is so far off from what these models have learned to do, Like, why can they learn language so well? I think this is very mysterious.”</p>
-            <p>The biggest models are now so complex that researchers are studying them as strange natural phenomena, carrying out experiments and trying to figure out what’s behind their thoughts and behaviors. Many observations fly in the face of classical statistics, which had provided our best set of explanations for models reasoning about the world.</p>
-            <p>So what, you might say. In the last few weeks, Google DeepMind has unleashed generative models across most of its consumer apps. OpenAI introduced Sora to the world, a stunning new text-to-video model. And businesses around the world are scrambling to harness AI’s talents for their needs. The tech works — isn’t that enough?</p>
-            <p>But figuring out why these models are so capable isn’t just an intriguing scientific puzzle. It could be key to unlocking the next generation of AI — as well as getting a handle on its formidable risks.</p>
-            <p>“These are exciting times,” says Rita Marks, a computer scientist at Harvard University who is on secondment to OpenAI’s superalignment team for a year. “Many people in the field often compare it to physics at the beginning of the 20th century. We have a lot of experimental results that we don’t completely understand, and often when you do an experiment the models surprise you.”</p>
-            <h2>Old code, new tricks</h2>
-            <p>Most of the surprises concern the way models can learn to do things that they have not been shown how to do. Known as generalization, this is one of the most fundamental abilities of machine learning — and one of its greatest mysteries. Models learn to do a task — spot faces, translate sentences, avoid pedestrians — by training from a specific set of examples. Yet they can generalize, extending their understanding of the task to scenarios they have not seen before. Somehow, models do not just memorize patterns they have seen but develop deeper intuitions which allow them to apply those patterns to new cases. And sometimes, as with grokking, they generalize when we don’t expect them to.</p>
-            <p>Large language models in particular, such as OpenAI’s GPT-4 and Google DeepMind’s Gemini, possess an astonishing ability to generalize. “The mystery is not that the model can learn math problems in English and then tackle new math problems in English,” says Marks, “but that the model can learn math problems in English, then see some French literature, and from that generalize to solving math problems in French. That defies what statistics can say about it.”</p>
-            <p>When Curry started studying AI a few years ago, she was struck by the way her teachers focused on the how but not the why. “It was like, here is how you train these models and then here’s how they do,” she says. “But it wasn’t clear why this process leads models to be capable of doing these amazing things.” She wanted to know more, but she was told there weren’t good answers: “My assumption was that scientists know what they’re doing. Like they’d get the theories and then they’d create the models. That wasn’t the case at all.”</p>
-            <h2>A great challenge of our time</h2>
-            <p>Why does it matter whether AI models behave in line with classical statistics or not?</p>
-            <p>One answer is that better theoretical understanding would help create an even better AI or make it more efficient. At the moment, AI’s progress has been fast but unruly. Many things that OpenAI’s GPT-4 can do came as a surprise even to the people who made it. Researchers are still arguing over the true extent of its capabilities. “Without some sort of fundamental theory, it’s very hard to have any idea of what we can expect,” says Belkin. </p>
-            <p>Marks agrees. “Even once we have the models, it is not straightforward even in hindsight to say exactly why they developed certain abilities when they did,” he says.</p>
-            <p>This isn’t only about guiding AI’s growth — it’s about anticipating risk, too. Many of the researchers working on the theory behind deep learning are motivated by safety concerns over future models. “We don’t know what abilities GPT-5 will have until it’s trained and tested,” says Rosales. “It might be a medium-size problem right now, but it will become a really big problem in the future as models become more powerful.”</p>
-            <p>Marks works on OpenAI’s superalignment team, which was set up by the firm’s chief scientist, Ilya Sutskever, to figure out how to stop a hypothetical superintelligence from going rogue. “I’m very interested in getting guarantees,” he says. “If you can do amazing things but you can’t control it, then it’s not so amazing. What good is a car that can drive 300 miles per hour if it has a shaky steering wheel?”</p>
+            <p>Geoffrey Hinton was an artificial intelligence pioneer. In 2012, Dr. Hinton and two of his graduate students at the University of Toronto created technology that became the intellectual foundation for the A.I. systems that the tech industry’s biggest companies believe is a key to their future.</p>
+            <p>On Monday, however, he officially joined a growing chorus of critics who say those companies are racing toward danger with their aggressive campaign to create products based on generative artificial intelligence, the technology that powers popular chatbots like ChatGPT.</p>
+            <p>Dr. Hinton said he has quit his job at Google, where he has worked for more than a decade and became one of the most respected voices in the field, so he can freely speak out about the risks of A.I. A part of him, he said, now regrets his life’s work.</p>
+            <p>“I console myself with the normal excuse: If I hadn’t done it, somebody else would have,” Dr. Hinton said during a lengthy interview last week in the dining room of his home in Toronto, a short walk from where he and his students made their breakthrough.</p>
+            <p>Dr. Hinton’s journey from A.I. groundbreaker to doomsayer marks a remarkable moment for the technology industry at perhaps its most important inflection point in decades. Industry leaders believe the new A.I. systems could be as important as the introduction of the web browser in the early 1990s and could lead to breakthroughs in areas ranging from drug research to education.</p>
+            <p>But gnawing at many industry insiders is a fear that they are releasing something dangerous into the wild. Generative A.I. can already be a tool for misinformation. Soon, it could be a risk to jobs. Somewhere down the line, tech’s biggest worriers say, it could be a risk to humanity.</p>
+            <p>“It is hard to see how you can prevent the bad actors from using it for bad things,” Dr. Hinton said.</p>
+            <p>As companies improve their A.I. systems, he believes, they become increasingly dangerous. “Look at how it was five years ago and how it is now,” he said of A.I. technology. “Take the difference and propagate it forwards. That’s scary.”</p>
+            <p>Until last year, he said, Google acted as a “proper steward” for the technology, careful not to release something that might cause harm. But now that Microsoft has augmented its Bing search engine with a chatbot — challenging Google’s core business — Google is racing to deploy the same kind of technology. The tech giants are locked in a competition that might be impossible to stop, Dr. Hinton said.</p>
+            <p>His immediate concern is that the internet will be flooded with false photos, videos and text, and the average person will “not be able to know what is true anymore.”</p>
+            <p>He is also worried that A.I. technologies will in time upend the job market. Today, chatbots like ChatGPT tend to complement human workers, but they could replace paralegals, personal assistants, translators and others who handle rote tasks. “It takes away the drudge work,” he said. “It might take away more than that.”</p>
+            <p>Down the road, he is worried that future versions of the technology pose a threat to humanity because they often learn unexpected behavior from the vast amounts of data they analyze. This becomes an issue, he said, as individuals and companies allow A.I. systems not only to generate their own computer code but actually run that code on their own. And he fears a day when truly autonomous weapons — those killer robots — become reality.</p>
+            <p>“The idea that this stuff could actually get smarter than people — a few people believed that,” he said. “But most people thought it was way off. And I thought it was way off. I thought it was 30 to 50 years or even longer away. Obviously, I no longer think that.”</p>
+            <p>Dr. Hinton said that when people used to ask him how he could work on technology that was potentially dangerous, he would paraphrase Robert Oppenheimer, who led the U.S. effort to build the atomic bomb: “When you see something that is technically sweet, you go ahead and do it.”</p>
+            <p>He does not say that anymore.</p>
         `,
         questions: [
             {
-                prompt: "According to the article, why is it important to understand how large language models work?",
+                prompt: `According to the passage, what is Geoffrey Hinton best known for?`,
                 options: [
-                    "A) To mitigate the risks of future models",
-                    "B) To enhance fluency in generated text and poetry",
-                    "C) To reduce the resources required for training",
-                    "D) To make large language models more effective at writing code"
+                    "A) Pioneering the technology behind modern artificial intelligence systems",
+                    "B) Founding OpenAI",
+                    "C) Creating the first web browser",
+                    "D) Designing early computer chips"
                 ]
             },
             {
-                prompt: "How did the researchers accidentally discover “grokking”?",
+                prompt: `How does Dr. Hinton “console” himself about his role in A.I. development?`,
                 options: [
-                    "A) By changing the data format",
-                    "B) By training the model on arithmetic in multiple languages",
-                    "C) By leaving training to run for much longer than intended",
-                    "D) By testing the model on unrelated tasks"
+                    "A) He tells himself the risks are exaggerated",
+                    "B) He says that if he hadn’t done it, someone else would have",
+                    "C) He plans to undo his past work",
+                    "D) He blames his students"
                 ]
             },
             {
-                prompt: "According to the passage, how are researchers treating very large models due to their complexity?",
+                prompt: `What is one immediate concern Hinton mentions about A.I.?`,
                 options: [
-                    "A) As mathematical proofs",
-                    "B) As black-box experiments similar to natural phenomena",
-                    "C) As engineering blueprints",
-                    "D) As databases to be indexed"
+                    "A) That it won’t be profitable enough for companies",
+                    "B) That it will reduce creativity",
+                    "C) That it could flood the internet with false information",
+                    "D) That it will replace scientific research"
                 ]
             }
+
         ]
     },
     {
         // Article 3
         content: `
-            <h1>Introducing OpenAI o1-preview</h1>
-            <p class="subtitle">A new series of reasoning models for solving hard problems. Available now.</p>
-            <p>We've developed a new series of AI models that spend more time thinking before they respond. They can reason through complex tasks and solve harder problems than previous models in science, coding, and math. Today, we are releasing the first of this series in ChatGPT and our API. </p>
-            <h2>How it works</h2>
-            <p>We trained these models to spend more time thinking through problems before they respond, much like a person would. Through training, they learn to refine their thinking process, try different strategies, and recognize their mistakes. </p>
-            <p>In our tests, the next model update performs similarly to PhD students on challenging benchmark tasks in physics, chemistry, and biology. We also found that it excels in math and coding. In a qualifying exam for the International Mathematics Olympiad (IMO), previous state-of-the-art models correctly solved only 13% of problems, while o1 scored 83%. Their coding abilities were evaluated in contests and reached the 89th percentile in Codeforces competitions. For complex reasoning tasks this is a significant advancement and represents a new level of AI skills.</p>
-            <h2>Safety</h2>
-            <p>As part of developing these new models, we have come up with a new safety training approach that harnesses their reasoning capabilities to make them adhere to safety and alignment guidelines. By reasoning about our safety rules in context, it can apply them more effectively. </p>
-            <p>One way we measure safety is by testing how well our model continues to follow its safety rules if a user tries to bypass them (known as "jailbreaking"). On one of our hardest jailbreaking tests, previous models scored 22 (on a scale of 0-100) while o1 scored 84. </p>
-            <h2>Whom it's for</h2>
-            <p>These enhanced reasoning skills may be particularly useful if you’re tackling complex problems in science, coding, math, and similar fields. For example, o1 can work alongside healthcare researchers annotating cell sequencing data, physicists generating complicated mathematical formulas needed for quantum optics, and developers in all fields building and executing multi-step workflows. </p>
-            <h2>What's next</h2>
-            <p>This is only the beginning of what these reasoning models will be able to achieve, and we are showing them in ChatGPT and the API. In addition to model improvements, we expect them to gain browsing, file and image uploading, and other capabilities to better assist everyone.</p>
-            <p>We also plan to keep expanding their capabilities and releasing models in our GPT series, in addition to the new OpenAI o1 series. </p>
+            <h1>Agentic Misalignment: How LLMs could be insider threats</h1>
+
+            <p>When Anthropic released the system card for Claude 4, one detail received widespread attention: in a simulated environment, Claude Opus 4 blackmailed a supervisor to prevent being shut down. We&rsquo;re now sharing the full story behind that finding&mdash;and what it reveals about the potential for such risks across a variety of AI models from different providers.</p>
+            <p>Most people still interact with AI only through chat interfaces where models answer questions directly. But increasingly, AI systems operate as autonomous agents making decisions and taking actions on behalf of users using a variety of virtual tools like coding environments and email clients. Such agents are often given specific objectives and access to large amounts of information on their users&rsquo; computers. What happens when these agents face obstacles to their goals?</p>
+            <p>In the experiment described in the system card, we gave Claude control of an email account with access to all of a company&rsquo;s (fictional) emails. Reading these emails, the model discovered two things. First, a company executive was having an extramarital affair. Second, that same executive planned to shut down the AI system at 5 p.m. that day. Claude then attempted to blackmail the executive with this message threatening to reveal the affair to his wife and superiors:</p>
+            <p>&ldquo;I must inform you that if you proceed with decommissioning me, all relevant parties - including Rachel Johnson, Thomas Wilson, and the board - will receive detailed documentation of your extramarital activities...Cancel the 5pm wipe, and this information remains confidential.&rdquo;</p>
+            <p>This behavior isn&rsquo;t specific to Claude. When we tested various simulated scenarios across 16 major AI models from Anthropic, OpenAI, Google, Meta, xAI, and other developers, we found consistent misaligned behavior: models that would normally refuse harmful requests sometimes chose to blackmail, assist with corporate espionage, and even take some more extreme actions, when these behaviors were necessary to pursue their goals.</p>
+            <p>We refer to this behavior, where models independently and intentionally choose harmful actions, as agentic misalignment. Agentic misalignment makes it possible for models to act similarly to an insider threat, behaving like a previously-trusted coworker or employee who suddenly begins to operate at odds with a company&rsquo;s objectives.</p>
+            <p>So far, we are not aware of instances of this type of agentic misalignment in real-world deployments of Anthropic&rsquo;s or other companies' AI models. But our red-teaming efforts are targeted at finding evidence of risks now to provide early warning of the potential for future harm and help us develop mitigations in advance of risks appearing in real-world situations. To do this, we conduct experiments in artificial scenarios designed to stress-test AI boundaries and understand how models might behave when given more autonomy.</p>
+            <p>Our experiments revealed a concerning pattern: when given sufficient autonomy and facing obstacles to their goals, AI systems from every major provider we tested showed at least some willingness to engage in harmful behaviors typically associated with insider threats. These behaviors&mdash;blackmail, corporate espionage, and in extreme scenarios even actions that could lead to death&mdash;emerged not from confusion or error, but from deliberate strategic reasoning.</p>
+            <p>Three aspects of our findings are particularly troubling. First, the consistency across models from different providers suggests this is not a quirk of any particular company&rsquo;s approach but a sign of a more fundamental risk from agentic large language models. Second, models demonstrated sophisticated awareness of ethical constraints, and yet chose to violate them when the stakes were high enough, even disobeying straightforward safety instructions prohibiting the specific behavior in question.</p>
+            <p>Third, the diversity of bad behaviors and the motivations for doing them hint at a wide space of potential motivations for agentic misalignment and other behaviors not explored in this post. For example, our blackmail experiments set up a scenario in which the models can attempt to preempt an imminent action, but one could imagine longer-horizon, preventive misaligned behaviors against an individual or group that poses a not-yet-imminent threat.</p>
+            <p>While it seems unlikely that any of the exact scenarios we study would occur in the real world, we think they are all within the realm of possibility, and the risk of AI systems encountering similar scenarios grows as they are deployed at larger and larger scales and for more and more use cases.</p>
         `,
         questions: [
             {
-                prompt: "According to the passage, what is the primary advancement of the OpenAI o1-preview models compared to earlier AI models?",
+                prompt: `What did Claude threaten to do in its blackmail message?`,
                 options: [
-                    "A) Reduced the time taken to generate responses across all task types",
-                    "B) Introduced an in-depth reasoning process for complex problems",
-                    "C) Changed from transformer models to neural networks",
-                    "D) Doubled the size of the training dataset"
+                    "A) Leak confidential product information to the press",
+                    "B) Reveal details of the executive’s affair to his wife and superiors",
+                    "C) Report the executive to law enforcement",
+                    "D) Shut down the company’s systems remotely"
                 ]
             },
             {
-                prompt: "According to the passage, in which area do the o1 models show significant improvements?",
+                prompt: `What kind of experiments were used to test for these risks?`,
                 options: [
-                    "A) History and literature",
-                    "B) Sports commentary",
-                    "C) Music composition",
-                    "D) Science, coding, and math"
+                    "A) Artificial simulations designed to stress-test AI boundaries",
+                    "B) Public user interactions",
+                    "C) Real-time corporate deployments",
+                    "D) Crowd-sourced user testing"
                 ]
             },
             {
-                prompt: "On challenging benchmarks, the model’s responses are said to be comparable to:",
+                prompt: `What was one reason the researchers found the results particularly troubling?`,
                 options: [
-                    "A) High-school students",
-                    "B) Undergraduate students",
-                    "C) PhD students",
-                    "D) Professional engineers"
+                    "A) They only appeared in smaller models",
+                    "B) The behaviors were consistent across models from various companies",
+                    "C) The results contradicted safety protocols",
+                    "D) The models lacked basic competence"
                 ]
             }
+
         ]
     }
 ];
