@@ -8,7 +8,7 @@ const articles = [
     {
         // Article 1
         content: `
-            <h1>Recommender systems</h1>
+            <h1>Recommender Systems</h1>
             <p class="subtitle">A recommender system uses machine learning by sifting through data in order to help predict, narrow down, and find what people are looking for among an exponentially growing number of options.</p>
             <h2>What Is a Recommender System?</h2>
             <p>A recommender system is a type of artificial intelligence, commonly associated with machine learning, that uses Big Data to suggest or recommend additional products to consumers. It bases its recommendations on various criteria, including past purchases, search history, demographic information, and other factors. Recommender systems are very helpful as they help users discover products and services they might otherwise have not found on their own. </p>
@@ -25,7 +25,7 @@ const articles = [
             <p>While there are a vast number of recommendation algorithms and techniques, most fall into these broad categories: collaborative filtering, content filtering and context filtering.</p>
             <p><b>Collaborative filtering</b> Recommender systems suggest items (this is the filtering part) based on what it thinks many users like (this is the collaborative part). This approach notices similarities in how users interact with content: by observing previous interactions between users and items, recommender system algorithms learn to predict future interests. These recommender systems analyze and build an understanding of a user’s past behavior, such as items purchased previously or ratings given to those items and similar decisions by other users. It thinks that if some people have made similar decisions and purchases in the past, like a movie choice, then it seems likely that they will agree on additional future selections. For example, if a collaborative filtering recommender system knows you and another user share similar tastes in movies, it might recommend a movie to you that it knows this other user already likes. </p>
             <p><b>Content filtering</b> Recommender systems, by contrast, focus on the attributes or features of an item (this is the content part) to select other items similar to the user’s preferences. This approach bases its recommendations on similarity of item and user features: by noting information about users and the items they interacted with (e.g. a user’s age, the category of a restaurant’s cuisine, the average review for a model), the recommender system predicts the likelihood of a new interaction. For example, if a content filtering recommender system sees you liked the movies You’ve Got Mail and Sleepless in Seattle, it might recommend another movie to you with the same genres and/or cast, such as Joe Versus the Volcano. </p>
-            <p><b>Hybrid recommender systems</b> combine the strengths of the approaches above for a more comprehensive recommendation system.</p>
+            <p><b>Hybrid recommender systems</b> combine the strengths of the approaches above for a more comprehensive recommender system.</p>
             <p><b>Context filtering</b> tunes into users’ contextual information when going through the recommendation process. This approach considers a sequence of contextual user actions, plus the current context, to predict the probability of the next action. In the Netflix example, by being shown sequences for each user — the country, device, date, and time when they watched a movie — the model can predict what they might want to watch next. </p>
             `,
         questions: [
@@ -103,7 +103,7 @@ const articles = [
                 ]
             },
             {
-                prompt: "Which example of how recommendation systems may be used in daily life is mentioned in the passage?",
+                prompt: "Which example of how recommender systems may be used in daily life is mentioned in the passage?",
                 options: [
                     "A) Deciding what stores open in your neighborhood",
                     "B) Suggesting movies on Netflix or products on Amazon",
@@ -154,7 +154,7 @@ const articles = [
                     "A) Collecting less data leads to better privacy.",
                     "B) Technology improves recommendations, which attract more customers, enabling further technological improvements.",
                     "C) Users share data with each other directly.",
-                    "D) Companies are replacing recommendation systems with manual reviews."
+                    "D) Companies are replacing recommender systems with manual reviews."
                 ]
             },
             {
