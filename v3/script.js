@@ -28,12 +28,34 @@ const articles = [
             <p><b>Hybrid recommender systems</b> combine the strengths of the approaches above for a more comprehensive recommendation system.</p>
             <p><b>Context filtering</b> tunes into users’ contextual information when going through the recommendation process. This approach considers a sequence of contextual user actions, plus the current context, to predict the probability of the next action. In the Netflix example, by being shown sequences for each user — the country, device, date, and time when they watched a movie — the model can predict what they might want to watch next. </p>
             `,
-        question: "Which of the following statements about recommender systems is NOT mentioned in the passage?",
-        options: [
-            "A) Recommender systems use data such as impressions, clicks, likes, and purchases for training.",
-            "B) Recommender systems have been shown to boost e-commerce conversion rates.",
-            "C) Recommender systems are widely used in news apps to surface relevant articles.",
-            "D) Algorithms for recommender systems include collaborative, content, and context filtering approaches."
+        questions: [
+            {
+                prompt: `According to the passage, what specific kind of neural network are LLMs based on?`,
+                options: [
+                    "A) Recurrent neural networks",
+                    "B) Convolutional neural networks",
+                    "C) Bayesian networks",
+                    "D) Transformer models"
+                ]
+            },
+            {
+                prompt: `Which example sentence was used in the passage to demonstrate how language models use letter frequencies as numerical patterns?`,
+                options: [
+                    "A) She sells seashells by the seashore.",
+                    "B) The quick brown fox jumped over the lazy dog.",
+                    "C) Artificial intelligence is transforming the world.",
+                    "D) A journey of a thousand miles begins with a single step."
+                ]
+            },
+            {
+                prompt: `In the description of tuning, what two forms of tuning were mentioned?`,
+                options: [
+                    "A) Pre-tuning and post-tuning",
+                    "B) Gradient-tuning and bias-tuning",
+                    "C) Fine-tuning and prompt-tuning",
+                    "D) Self-tuning and supervised-tuning"
+                ]
+            }
         ]
     },
     {

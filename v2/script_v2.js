@@ -8,6 +8,7 @@ const articles = [
     {
         // Article 1
         content: `
+            <p style="text-align: center; font-size: 16px;"> Scroll down &darr; </p>
             <h1>What is a large language model (LLM)?</h1>
             <p class="subtitle">Large language models (LLMs) are machine learning-based programs designed to process and generate text. Building these systems requires massive language datasets.</p>
             <h2>What is a large language model (LLM)?</h2>

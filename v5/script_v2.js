@@ -8,6 +8,7 @@ const articles = [
     {
         // Article 1
         content: `
+            <p style="text-align: center; font-size: 16px;"> Scroll down &darr; </p>
             <h1>An Overview of Catastrophic AI Risks</h1>
             <p class="subtitle">Artificial intelligence (AI) has recently seen rapid advancements, raising concerns among experts, policymakers, and world leaders about its potential risks. As with all powerful technologies, advanced AI must be handled with great responsibility to manage the risks and harness its potential.</p>
 

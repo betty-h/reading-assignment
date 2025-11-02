@@ -8,6 +8,7 @@ const articles = [
     {
         // Article 1
         content: `
+            <p style="text-align: center; font-size: 16px;"> Scroll down &darr; </p>
             <h1>Recommendation Systems</h1>
             <p class="subtitle">A recommendation system is a type of machine learning model that uses statistical methods to analyze data for predicting, narrowing down, and finding what people are looking for among an exponentially growing number of options.</p>
             <h2>What Is a Recommendation System?</h2>

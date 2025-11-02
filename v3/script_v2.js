@@ -8,6 +8,7 @@ const articles = [
     {
         // Article 1
         content: `
+            <p style="text-align: center; font-size: 16px;"> Scroll down &darr; </p>
             <h1>Recommender Systems</h1>
             <p class="subtitle">A recommender system uses machine learning by sifting through data in order to help predict, narrow down, and find what people are looking for among an exponentially growing number of options.</p>
             <h2>What Is a Recommender System?</h2>
